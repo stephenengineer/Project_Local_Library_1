@@ -1,3 +1,12 @@
+const {
+  getTotalBooksCount,
+  getTotalAccountsCount,
+  getBooksBorrowedCount,
+  getMostCommonGenres,
+  getMostPopularBooks,
+  getMostPopularAuthors,
+} = require("../src/home");
+
 function renderTotalBooks() {
   const count = getTotalBooksCount(books);
   if (typeof count !== "number") return;
