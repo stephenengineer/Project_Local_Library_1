@@ -14,13 +14,13 @@ function getTotalAccountsCount(accounts) {
 function getBooksBorrowedCount(books) {
   if (!books) return null;
   // We'll leverage the function we built in books.js that has this info
-  const getBorrowedBooks = require("./books");
-  return getBorrowedBooks.partitionBooksByBorrowedStatus(books)[0].length;
+  // const getBorrowedBooks = require("./books"); <= No longer needed because I imported books.js into index.html.
+  return partitionBooksByBorrowedStatus(books)[0].length;
 }
 
 // Made a very applicable helper function for shortening the results lengths in books.js, so I will
 // export that into here for the last 3 functions
-const shortenResults = require("./books").shortenResults;
+// const shortenResults = require("./books").shortenResults; <= No longer needed because I imported books.js into index.html.
 
 // The last 3 functions all involve sorting the results and shortening the list, so I will make that a function.
 const sortAndShorten = (resultsArray, size) => {
@@ -72,7 +72,7 @@ function getMostPopularAuthors(books, authors) {
         .filter((book) => book.authorId === author.id)
         .reduce((total, book) => total + book.borrows.length, 0),
     };
-    console.log(tempObject);
+    // console.log(tempObject);
     return tempObject;
   });
   return sortAndShorten(results, 5);
