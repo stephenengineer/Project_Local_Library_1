@@ -4,8 +4,9 @@ function findAuthorOrBookById(objects, id) {
 }
 
 function findAuthorById(authors, id) {
+  console.log("id", id);
   let result = {};
-  if (!authors || !id) return result;
+  if (!authors || (!id && id !== 0)) return result;
   result = findAuthorOrBookById(authors, id);
   return result;
 }

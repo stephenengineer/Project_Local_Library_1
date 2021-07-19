@@ -12,6 +12,7 @@
     "docker:stop": "docker stop $(docker ps -q)",
     "docker:test": "docker run -i thinkful-ed/zid-pf-project-loc-library-01-qualified-assignment npm test",
     "start": "http-server public/",
+    "start:dev": "live-server public/",
     "start:solution": "npm run -it docker:build && npm run docker:run",
     "test": "mocha test/*.test.js",
     "test:solution": "npm run docker:build && npm run docker:test"
@@ -21,6 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
+    "live-server": "^1.2.1",
     "mocha": "^8.1.1"
   },
   "dependencies": {
