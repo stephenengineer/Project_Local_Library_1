@@ -47,6 +47,11 @@ function getBorrowersForBook(book, accounts) {
   let results = [];
   if (!book || !accounts) return results;
   results = book.borrows.map((borrow) => {
+    if (!borrow.id)
+      return {
+        ...borrow,
+        name: { first: "Borrower info not available", last: "" },
+      };
     const borrower = accounts.find((account) => account.id === borrow.id);
     return { ...borrow, ...borrower };
   });
