@@ -9,6 +9,7 @@ function accountLinkTemplate(account) {
   `;
 }
 
+// Going to ignore account.picture for now, since the API has gone offline forever.  Will instead use a static sample picture.
 function accountDetailsTemplate(account, borrowCount = 0) {
   const fullName = `${account.name.first} ${account.name.last}`;
   return `
@@ -18,7 +19,7 @@ function accountDetailsTemplate(account, borrowCount = 0) {
       </div>
       <div class="card-body">
         <div class="media">
-          <img src="${account.picture}" class="mr-3 rounded border border-dark" alt="${fullName}">
+          <img src="${"../images/blank-profile-picture-640.png"}" class="mr-3 rounded border border-dark" alt="${fullName}" width="100px">
           <div class="media-body">
             <p><strong>Age:</strong> ${account.age}</p>
             <p><strong>Company:</strong> ${account.company}</p>

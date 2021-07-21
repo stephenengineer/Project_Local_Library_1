@@ -75,7 +75,6 @@ function renderBookSelection() {
       const book = findBookById(books, id);
       const author = findAuthorById(authors, book.authorId);
       const borrowers = getBorrowersForBook(book, accounts);
-      console.log("book:", book, "author:", author, "borrowers:", borrowers);
       if (book && author) {
         selection.innerHTML = bookDetailsTemplate(book, author);
       }

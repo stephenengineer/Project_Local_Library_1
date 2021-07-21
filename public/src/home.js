@@ -72,7 +72,6 @@ function getMostPopularAuthors(books, authors) {
         .filter((book) => book.authorId === author.id)
         .reduce((total, book) => total + book.borrows.length, 0),
     };
-    // console.log(tempObject);
     return tempObject;
   });
   return sortAndShorten(results, 5);
